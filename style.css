@@ -1,0 +1,73 @@
+:root{
+    --img1: url('./img/image\ 18.png');
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+ul,ol,li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.menu{
+    width: 100vw;
+    height: 112px;
+    background-color: #FFBF35;
+    color: white;
+    display: flex;
+    gap: 10px;
+    background-image: url('./img/icons.png'), url('./img/Group\ 4.png'), url('./img/Group\ 5.png');
+    background-repeat: no-repeat;
+    background-position: 98% 50%, 38% 50%, 22% 50%;
+}
+
+.menu input{
+    width: 323px;
+    height: 32px;
+}
+
+.menu2{
+    padding-top: 44px;
+    padding-left: 1100px;
+}
+
+.menu button{
+    width: 83px;
+    height: 26px;
+}
+
+.menu a{
+    font-size: 90px;
+    text-shadow: #000 1px 0px 5px;
+    font-family: "Libre Baskerville", serif;
+}
+
+main{
+    height: 807px;
+    background-image: var(--img1); 
+    background-color: #0006;
+    background-blend-mode: darken;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+main p{
+    color: #ffff;
+    font-size: 90px;
+    display: flex;
+    justify-content: center;
+    padding-top: 17%;
+    text-shadow: #000 -4px 3px 2px;
+    font-family: "Libre Baskerville", serif;}
+
+
+
+
