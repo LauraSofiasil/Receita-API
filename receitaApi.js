@@ -1,8 +1,5 @@
 'use strict'
 
-const blocos = [
-    {nome: "Escola de Princesas", icon: 'carbonara.png', descricao: 'Blair'},
-]
 
 async function pesquisarCategoria(categoria){
     const url = `https://www.themealdb.com/api/json/v1/1/filter.php?c=${categoria}`
@@ -11,82 +8,53 @@ async function pesquisarCategoria(categoria){
     const response = await fetch(url)
     const data = await response.json()
     
-    if (data.meals.length > 0){
-        return (data.meals)
-    }
-}
-
-function criarImg(link) {
-    const galeria = document.getElementById('galeria');
-    const card = document.createElement('div');
-    card.classList.add('card');
-
-    const nome = link['strMeal'];
-    const img = link['strMealThumb'];
-    const numeroId = link['idMeal'];
-    // const preparo = link['strInstructions'];
-    // const ingredientes = link['strIngredient1']
-
-    card.innerHTML = `
-        <img src=${img}>
-        <h1>${nome}</h1>
-        <h2>Id: ${numeroId}</h2>
-        <button class="receita" data-img="${img}" data-nome="${nome}" data-numeroId="${numeroId}">Receita</button>
-    `;
-
-    galeria.appendChild(card);
-    card.querySelector('.receita').addEventListener('click', exibirDetalhes);
+    return (data.meals)
 
 }
 
-// function exibirDetalhes(novo) {
-//     const img = novo.target.dataset.img;
-//     const nome = novo.target.dataset.nome;
-//     const preparo = novo.target.dataset.preparo;
-//     const ingredientes = novo.target.dataset.ingredientes;
-   
-    
-        
-//     const detalhesCard = document.createElement('div');
-//     detalhesCard.classList.add('detalhes-card');
-        
-//     detalhesCard.innerHTML = `
-//         <img src=${img}>
-//         <h1>${nome}</h1>
-//         <h3>Ingredientes: ${ingredientes}</h3>
-//         <h3>Modo de Preparo: ${preparo}</h3>
-//         <button class="voltar">Voltar</button>
-//     `;
-//     const galeria = document.getElementById('galeria');
-//     galeria.replaceChildren(detalhesCard);
-        
-//     detalhesCard.querySelector('.voltar').addEventListener('click', preencher);
+async function criarCard(meals){
+    const card = document.createElement('div')
+    const novoTitulo = document.createElement('h1')
+    const novoTexto = document.createElement('p')
+    const novoBotao = document.createElement('button')
+    const img = document.createElement('img')
+    const galeria = document.getElementById('galeria')
 
-    
-// }
+    img.src = meals.strMealThumb
+
+
+    card.classList.add('card')
+
+    novoTitulo.textContent = meals.strMeal
+
+    novoTexto.textContent = meals.idMeal
+
+    novoBotao.textContent = 'Receita'
+
+    card.appendChild(img)
+    card.appendChild(novoTitulo)
+    card.appendChild(novoTexto)
+    card.appendChild(novoBotao)
+
+    galeria.appendChild(card)
+}
+
 
 async function preencher(){
     const ctg = document.getElementById('barraPesquisa').value
     const imgs = await pesquisarCategoria(ctg)
-    const galeria = document.getElementById('galeria')
 
-    //substitui todos os elementos por novos
-    galeria.replaceChildren(imgs)
+    imgs.forEach(criarCard)
 
-    imgs.forEach(criarImg(link))
-
-    console.log(imgs);
+    // console.log(imgs)
 }
 
-document.getElementById('pesquisar')
-    .addEventListener('click', preencher);
+document.getElementById('pesquisar').addEventListener('click', preencher);
     
-
+//Deletar o fundo ao clicar o botão e cria uma página nova
 async function deletar(){
-    const tela = document.getElementById('imgFundo')
     const conteudo = document.getElementById('conteudo')
 
-    tela.style.display = 'none';
     conteudo.style.display = 'none'
 }
 
