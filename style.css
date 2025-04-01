@@ -14,50 +14,48 @@ a{
 }
 
 header{
-    width: 100vw;
-    height: 112px;
+    width: 99.2vw;
+    height: 13vh;
     background-color: #FFBF35;
     color: white;
     display: flex;
-    gap: 10px;
+    gap: 1vh;
     background-image: url('./img/icons.png'), url('./img/Group\ 4.png'), url('./img/Group\ 5.png');
     background-repeat: no-repeat;
     background-position: 98% 50%, 38% 50%, 22% 50%;
 }
 
 header p{
-    font-size: 60px;
+    font-size: 6.5vh;
     text-shadow: #000 1px 0px 5px;
     font-family: "Inknut Antiqua", serif;
-    padding-bottom: 20px;
+    padding-bottom: 2vh;
     display: flex;
     align-items: center;
-    padding-top: 20px;
-    padding-left: 10px;
+    padding-top: 2vh;
+    padding-left: 1vh;
 }
 
 .menu2{
-    padding-top: 44px;
-    padding-left: 1100px;
+    padding-top: 5vh;
+    padding-left: 110vh;
 }
 
 .menu2 input{
-    width: 323px;
-    height: 32px;
-    padding: 8px;
+    width: 34vh;
+    height: 3vh;
+    padding: 1vh;
     border: none;
-    border-radius: 6px;
+    border-radius: 1vh;
 }
 
 .menu2 button{
-    width: 83px;
-    height: 26px;
-    /* border: none;
-    border-radius: 5px; */
+    width: 8vh;
+    height: 3vh;
 }
 
 .conteudo{
-    height: 807px;
+    height: 100vh;
     background-image: url('./img/image\ 18.png'); 
     background-color: #0006;
     background-blend-mode: darken;
@@ -67,7 +65,7 @@ header p{
 
 .conteudo p{
     color: #ffff;
-    font-size: 90px;
+    font-size: 12vh;
     display: flex;
     justify-content: center;
     padding-top: 17%;
@@ -77,7 +75,58 @@ header p{
 
 .galeria{
     background-color: #FFDCA3;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10vh;
+    padding-top: 5%;
+    justify-content: center;
 }
+
+
+.card{
+    background-color: #FFE9C6;
+    width: 50vh;
+    height: 75vh;
+    text-align: center;
+    padding-top: 1vh;
+    box-shadow: 0px 4px 10px black;
+}
+
+.card img{
+    height: 50vh;
+    width: 45vh;
+    padding: 4vh;
+}
+
+.card h1{
+    font-size: 3vh;
+}
+
+.card p{
+    font-size: 2vh;
+    padding-top: 3%;
+    padding-bottom: 5vh;
+}
+
+.card input{
+    width: 10vh;
+    height: 2vh;
+    padding: 1vh;
+    border: none;
+    border-radius: 1vh;
+}
+
+.card button{
+    height: 7vh;
+    width: 20vh;
+    background-color: #E2C9A1;
+    border: none;
+    border-radius: 3vh;
+    font-size: 20px;
+    color: #FFFFFF;
+    font-family: "Kavoon", serif;
+}
+
 
 
 
